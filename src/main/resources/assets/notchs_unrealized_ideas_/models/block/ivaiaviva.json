@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "notchs_unrealized_ideas_:blocks/grassblock",
+    "up": "notchs_unrealized_ideas_:blocks/grassblock",
+    "north": "notchs_unrealized_ideas_:blocks/grassblock",
+    "east": "notchs_unrealized_ideas_:blocks/grassblock",
+    "south": "notchs_unrealized_ideas_:blocks/grassblock",
+    "west": "notchs_unrealized_ideas_:blocks/grassblock",
+    "particle": "notchs_unrealized_ideas_:blocks/grassblock"
+  }
+}

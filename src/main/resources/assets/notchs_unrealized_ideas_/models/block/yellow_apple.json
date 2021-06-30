@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "notchs_unrealized_ideas_:blocks/yellowapple",
+    "particle": "notchs_unrealized_ideas_:blocks/yellowapple"
+  }
+}
