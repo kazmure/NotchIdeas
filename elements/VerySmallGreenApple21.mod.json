@@ -3,17 +3,17 @@
   "_type": "food",
   "definition": {
     "renderType": 0,
-    "texture": "greenapple",
+    "texture": "verysmallgreenapple",
     "customModelName": "Normal",
-    "name": "Green Apple",
+    "name": "Very Small Green Apple",
     "rarity": "COMMON",
     "specialInfo": [],
     "creativeTab": {
       "value": "FOOD"
     },
     "stackSize": 64,
-    "nutritionalValue": 4,
-    "saturation": 0.3,
+    "nutritionalValue": 1,
+    "saturation": 0.1,
     "eatingSpeed": 32,
     "resultItem": {
       "value": ""
@@ -22,8 +22,8 @@
     "isAlwaysEdible": false,
     "animation": "eat",
     "hasGlow": false,
-    "onEaten": {
-      "name": "GreenApple21FoodEaten"
+    "onRightClickedOnBlock": {
+      "name": "VerySmallGreenApple21RightClickedOnBlock"
     }
   }
 }

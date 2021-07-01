@@ -3,17 +3,17 @@
   "_type": "food",
   "definition": {
     "renderType": 0,
-    "texture": "greenapple",
+    "texture": "smallgreenapple",
     "customModelName": "Normal",
-    "name": "Green Apple",
+    "name": "Small Green Apple",
     "rarity": "COMMON",
     "specialInfo": [],
     "creativeTab": {
       "value": "FOOD"
     },
     "stackSize": 64,
-    "nutritionalValue": 4,
-    "saturation": 0.3,
+    "nutritionalValue": 1,
+    "saturation": 0.19999999999999998,
     "eatingSpeed": 32,
     "resultItem": {
       "value": ""
@@ -21,9 +21,6 @@
     "forDogs": false,
     "isAlwaysEdible": false,
     "animation": "eat",
-    "hasGlow": false,
-    "onEaten": {
-      "name": "GreenApple21FoodEaten"
-    }
+    "hasGlow": false
   }
 }
