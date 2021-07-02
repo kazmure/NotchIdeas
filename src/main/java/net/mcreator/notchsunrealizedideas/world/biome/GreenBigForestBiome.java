@@ -79,7 +79,7 @@ public class GreenBigForestBiome extends NotchsUnrealizedIdeasModElements.ModEle
 						.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
 								new SimpleBlockStateProvider(LeavesBlockBlock.block.getDefaultState()),
 								new JungleFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 2),
-								new MegaJungleTrunkPlacer(14, 2, 19), new TwoLayerFeature(1, 1, 2)))
+								new MegaJungleTrunkPlacer(10, 2, 19), new TwoLayerFeature(1, 1, 2)))
 										.setDecorators(ImmutableList.of(CustomLeaveVineTreeDecorator.instance, CustomTrunkVineTreeDecorator.instance,
 												new CustomCocoaTreeDecorator()))
 										.setMaxWaterDepth(0).build())

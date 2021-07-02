@@ -59,7 +59,7 @@
     "treesPerChunk": 4,
     "vanillaTreeType": "Big trees",
     "treeType": 1,
-    "minHeight": 14,
+    "minHeight": 10,
     "maxWaterDepth": 0,
     "treeStem": {
       "value": "Blocks.LOG#0"
