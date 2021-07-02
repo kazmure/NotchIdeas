@@ -417,6 +417,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "green_big_forest"
+    },
+    {
+      "name": "GreenPlains",
+      "type": "biome",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "green_plains"
     }
   ],
   "variable_elements": [],
@@ -435,6 +444,7 @@
       "block.notchs_unrealized_ideas_.sapling_block": "Sapling Block",
       "item.notchs_unrealized_ideas_.apple_21": "Apple",
       "block.notchs_unrealized_ideas_.red_apple": "Apple",
+      "biome.notchs_unrealized_ideas_.green_plains": "Green Plains",
       "block.notchs_unrealized_ideas_.dirt_slab_block": "Dirt Slab Block",
       "block.notchs_unrealized_ideas_.leaves_block": "Leaves Block",
       "item.notchs_unrealized_ideas_.yellow_apple_21": "Yellow Apple",
