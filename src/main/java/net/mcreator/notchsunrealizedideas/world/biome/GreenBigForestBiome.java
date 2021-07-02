@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.BiomeManager;
 
-import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
+import net.minecraft.world.gen.trunkplacer.MegaJungleTrunkPlacer;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
@@ -18,7 +18,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.JungleFoliagePlacer;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import net.minecraft.world.gen.feature.TwoLayerFeature;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
@@ -58,10 +58,10 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 
 @NotchsUnrealizedIdeasModElements.ModElement.Tag
-public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElement {
+public class GreenBigForestBiome extends NotchsUnrealizedIdeasModElements.ModElement {
 	public static Biome biome;
-	public GreenForestBiome(NotchsUnrealizedIdeasModElements instance) {
-		super(instance, 28);
+	public GreenBigForestBiome(NotchsUnrealizedIdeasModElements instance) {
+		super(instance, 29);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 	private static class BiomeRegisterHandler {
@@ -69,7 +69,7 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
 				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(12638463).setWaterColor(4159204).setWaterFogColor(329011)
-						.withSkyColor(7972607).withFoliageColor(-11281124).withGrassColor(-11281124).build();
+						.withSkyColor(7972607).withFoliageColor(-11150564).withGrassColor(-11150053).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(GrassBlockBlock.block.getDefaultState(),
 								DirtBlockBlock.block.getDefaultState(), DirtBlockBlock.block.getDefaultState())));
@@ -78,13 +78,13 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.TREE
 						.withConfiguration((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
 								new SimpleBlockStateProvider(LeavesBlockBlock.block.getDefaultState()),
-								new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3),
-								new StraightTrunkPlacer(8, 2, 0), new TwoLayerFeature(1, 0, 1)))
+								new JungleFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 2),
+								new MegaJungleTrunkPlacer(14, 2, 19), new TwoLayerFeature(1, 1, 2)))
 										.setDecorators(ImmutableList.of(CustomLeaveVineTreeDecorator.instance, CustomTrunkVineTreeDecorator.instance,
 												new CustomCocoaTreeDecorator()))
 										.setMaxWaterDepth(0).build())
 						.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
-						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(4, 0.1F, 1))));
 				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 						Feature.RANDOM_PATCH.withConfiguration(Features.Configs.GRASS_PATCH_CONFIG).withPlacement(Features.Placements.PATCH_PLACEMENT)
 								.withPlacement(Placement.COUNT_NOISE.configure(new NoiseDependant(-0.8D, 5, 5))));
@@ -96,12 +96,12 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 						Feature.DISK
 								.withConfiguration(new SphereReplaceConfig(Blocks.SAND.getDefaultState(), FeatureSpread.func_242253_a(2, 4), 2,
 										ImmutableList.of(GrassBlockBlock.block.getDefaultState(), DirtBlockBlock.block.getDefaultState())))
-								.withPlacement(Features.Placements.SEAGRASS_DISK_PLACEMENT).func_242731_b(1));
+								.withPlacement(Features.Placements.SEAGRASS_DISK_PLACEMENT).func_242731_b(2));
 				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 						Feature.DISK
 								.withConfiguration(new SphereReplaceConfig(Blocks.GRAVEL.getDefaultState(), FeatureSpread.func_242253_a(2, 3), 2,
 										ImmutableList.of(GrassBlockBlock.block.getDefaultState(), DirtBlockBlock.block.getDefaultState())))
-								.withPlacement(Features.Placements.SEAGRASS_DISK_PLACEMENT).func_242731_b(1));
+								.withPlacement(Features.Placements.SEAGRASS_DISK_PLACEMENT).func_242731_b(2));
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				DefaultBiomeFeatures.withFrozenTopLayer(biomeGenerationSettings);
@@ -109,7 +109,7 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1f).scale(0.2f)
 						.temperature(0.5f).downfall(0.5f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();
-				event.getRegistry().register(biome.setRegistryName("notchs_unrealized_ideas_:green_forest"));
+				event.getRegistry().register(biome.setRegistryName("notchs_unrealized_ideas_:green_big_forest"));
 			}
 		}
 	}
@@ -125,7 +125,7 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("green_forest_lvtd");
+			tdt.setRegistryName("green_big_forest_lvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 		@Override
@@ -146,7 +146,7 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("green_forest_tvtd");
+			tdt.setRegistryName("green_big_forest_tvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 		@Override
@@ -167,7 +167,7 @@ public class GreenForestBiome extends NotchsUnrealizedIdeasModElements.ModElemen
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("green_forest_ctd");
+			tdt.setRegistryName("green_big_forest_ctd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 		public CustomCocoaTreeDecorator() {
